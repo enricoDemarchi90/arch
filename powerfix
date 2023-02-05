@@ -1,0 +1,16 @@
+## CPU Power Management
+
+  # Install auto-cpufreq and disable intel_pstate
+  
+  # edit conf to hibernate
+  
+  /etc/systemd/logind.conf  
+  HandlePowerKey=hibernate
+  HandleLidSwitch=hibernate
+  HandleLidSwitchExternalPower=hibernate
+  
+  # reset system-d to apply changes above
+  systemctl kill -s HUP systemd-logind
+  
+  
+  
