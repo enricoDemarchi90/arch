@@ -12,5 +12,17 @@
   # reset system-d to apply changes above
   systemctl kill -s HUP systemd-logind
   
-  
-  
+## Battery
+
+# setup proper sleep
+
+# see if it returns: s2idle [deep]
+cat /sys/power/mem_sleep
+
+#if not, add the following kernel parameter to /etc/default/grub
+
+mem_sleep_default=deep
+
+# on line 5 GRUB_CMDLINE_LINUX_DEFAULT
+# and then
+sudo grub-mkconfig -o /boot/grub/grub.cfg
